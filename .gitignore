@@ -1,0 +1,5 @@
+/.idea/
+/test.iml
+/target/generated-sources/annotations/org/example/generated/
+/target/maven-archiver/
+/target/maven-status/maven-compiler-plugin/compile/default-compile/
