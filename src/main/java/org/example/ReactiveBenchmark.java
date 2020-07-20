@@ -13,7 +13,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import static myioutils.MyIOUtils.pauseMs;
+import static myioutils.MyIOUtils.pauseMilliSec;
+import static myioutils.MyIOUtils.*;
 
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
@@ -103,7 +104,9 @@ public class ReactiveBenchmark {
             // without the pause, execution is irregular. Stream will only be processed
             // one time in 3 or 4. I suppose the main thread usually finishes before the
             // stream is processed unless the delay is inserted
-            pauseMs(1);
+            // would be better to use a mechanism like thread.join() or future.get() to
+            // do the sync. Not sure how to do this with threads created by Schedulers
+            pauseMilliSec(1);
             return disposable;
         } catch (IOException e) {
             e.printStackTrace();
