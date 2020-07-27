@@ -83,4 +83,5 @@ public class MyBenchmark {
         ParallelStreamsDemo parallelStreamsDemo = new ParallelStreamsDemo();
         parallelStreamsDemo.timeParallelStream();
     }
+
 }
